@@ -5,6 +5,9 @@ metadata:
   annotations:
     github.com/project-slug: "devops-syndicate/order"
     argocd/app-name: order
+    backstage.io/kubernetes-namespace: order
+    backstage.io/kubernetes-id: order
+    backstage.io/kubernetes-label-selector: 'app.oam.dev/name=order'
     backstage.io/techdocs-ref: dir:.
   links:
   - title: Link to ArgoCD
