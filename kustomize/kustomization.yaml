@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configurations:
+- configuration.yaml
+resources:
+- app.yaml
+configMapGenerator:
+  - name: order
+    literals:
+    - "PYROSCOPE_URL=http://pyroscope.observability:4040"
+    - "OTEL_SERVICE_NAME=order"
+    - "OTEL_EXPORTER_JAEGER_HTTP_ENDPOINT=http://tempo.observability:14268/api/traces"

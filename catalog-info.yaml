@@ -1,0 +1,22 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "order"
+  annotations:
+    github.com/project-slug: "devops-syndicate/order"
+    argocd/app-name: order
+    backstage.io/kubernetes-namespace: order
+    backstage.io/kubernetes-id: order
+    backstage.io/kubernetes-label-selector: 'app.oam.dev/name=order'
+    backstage.io/techdocs-ref: dir:.
+  links:
+    - title: Link to ArgoCD
+      url: http://argo-cd.127.0.0.1.nip.io/applications/order
+  tags:
+  - golang
+spec:
+  type: service
+  owner: admins
+  lifecycle: production
+  providesApis:
+    - order-api

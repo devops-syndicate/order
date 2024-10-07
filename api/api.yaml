@@ -1,0 +1,20 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: order-api
+  description: API definition of order
+spec:
+  type: openapi
+  owner: admins
+  lifecycle: production
+  definition: |
+    openapi: "3.0.0"
+    info:
+      version: 1.0.0
+      title: order API
+    servers:
+    - url: https://order.127.0.0.1.nip.io
+    paths:
+      /:
+        get:
+          summary: Returns hello
