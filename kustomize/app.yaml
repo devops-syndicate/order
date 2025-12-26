@@ -26,6 +26,9 @@ spec:
             name: order
             key: PYROSCOPE_URL
     traits:
+    - type: labels
+      properties:
+        "app.kubernetes.io/name": "order"
     - type: annotations
       properties:
         "prometheus.io/scrape": "true"
